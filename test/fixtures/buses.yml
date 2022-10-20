@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plate_number: MyString
+  no_of_seats: 1
+  cost_per_seat: 1
+  from: MyString
+  to: MyString
+  time_of_travel: 2022-10-20 16:54:05
+  driver_id: 1
+  available: false
+
+two:
+  plate_number: MyString
+  no_of_seats: 1
+  cost_per_seat: 1
+  from: MyString
+  to: MyString
+  time_of_travel: 2022-10-20 16:54:05
+  driver_id: 1
+  available: false
