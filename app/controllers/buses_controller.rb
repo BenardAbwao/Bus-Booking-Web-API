@@ -16,6 +16,12 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
     render json: bus, status: :created 
   end
 
+  def update
+    bus = find_bus 
+    bus.update(bus_params) 
+    render json: bus, status: :ok
+  end
+
   def destroy
     bus = find_bus
     bus.destroy
