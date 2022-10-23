@@ -11,6 +11,11 @@ class AdminsController < ApplicationController
     head :no_content
   end
 
+  def index
+    admins = Admin.all 
+    render json: admins, status: :ok
+  end
+
 
   private
   def admin_params 
