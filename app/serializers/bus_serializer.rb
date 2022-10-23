@@ -1,4 +1,4 @@
 class BusSerializer < ActiveModel::Serializer
   attributes :id, :plate_number, :no_of_seats, :cost_per_seat,
-   :from, :to, :time_of_travel, :available
+   :from, :to, :travel_time,:travel_date, :available
 end

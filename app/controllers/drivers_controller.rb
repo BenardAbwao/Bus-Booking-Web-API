@@ -6,12 +6,8 @@ class DriversController < ApplicationController
     end
 
     def create
-      if(params[:role]=== driver)
         driver = Driver.create(driver_params)
         render json: driver, status: :ok
-      else
-        return null
-      end
     end
 
     def show
@@ -22,7 +18,7 @@ class DriversController < ApplicationController
     private
 
     def driver_params
-      params.permit(:name,:email, :role, :password_digest)
+      params.permit(:name,:email, :role, :password)
     end
 
     def render_not_found_response

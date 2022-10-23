@@ -12,7 +12,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
   end
 
   def create
-    bus = Bus.create(bus_params)
+    bus = Bus.create!(bus_params)
     render json: bus, status: :created 
   end
 
@@ -36,7 +36,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
   def bus_params
     params.permit(:plate_number, :no_of_seats, :cost_per_seat, :from, :to, 
-    :travel_date,:travel_time, :available)
+    :travel_date,:travel_time, :available, :driver_id)
   end
 
   def render_unprocessable_entity_response(exception)
