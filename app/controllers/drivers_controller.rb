@@ -22,7 +22,7 @@ class DriversController < ApplicationController
     private
 
     def driver_params
-      params.permit(:name, :role)
+      params.permit(:name,:email, :role, :password_digest)
     end
 
     def render_not_found_response

@@ -10,16 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_20_135653) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_23_082232) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "birds", force: :cascade do |t|
-    t.string "name"
-    t.string "species"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "bookings", force: :cascade do |t|
     t.integer "bus_id"
@@ -34,11 +27,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_135653) do
     t.integer "cost_per_seat"
     t.string "from"
     t.string "to"
-    t.datetime "time_of_travel"
     t.integer "driver_id"
     t.boolean "available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "travel_date"
+    t.time "travel_time"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -47,12 +41,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_135653) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "role"
   end
 
   create_table "drivers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "role"
+    t.string "password_digest"
   end
 
 end
