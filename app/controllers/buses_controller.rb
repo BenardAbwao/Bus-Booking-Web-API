@@ -47,3 +47,10 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
     render json: Bus.find(params[:id]), status: :ok
   end
 end
+
+
+
+
+
+
+ 
