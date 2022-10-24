@@ -1,9 +1,9 @@
 puts "🌱🌱🌱 Seeding drivers 🌱🌱🌱"
-d1 = Driver.create!(name: 'Jack Jacob', email: "jack@gmail.com", role: "driver", password: "jack1234")
-d2 = Driver.create!(name: 'Hellen Khalif', email: "hellen@gmail.com", role: "driver", password: "hellen1234")
-d3 = Driver.create!(name: 'Peter Molu', email: "peter@gmail.com", role: "driver", password: "peter1234")
-d4 = Driver.create!(name: 'Philo Miu', email: "philo@gmail.com", role:"driver", password: "philo1234")
-d5 = Driver.create!(name: 'Shah Jiko', email:"shah@gmail.com", role: "driver", password: "shah1234")
+d1 = Driver.create!(name: 'Jack Jacob', email: "jack@gmail.com", role: "driver",phone_number:0700123456, password: "jack1234")
+d2 = Driver.create!(name: 'Hellen Khalif', email: "hellen@gmail.com", role: "driver",phone_number:0700123456, password: "hellen1234")
+d3 = Driver.create!(name: 'Peter Molu', email: "peter@gmail.com", role: "driver",phone_number:0700123456, password: "peter1234")
+d4 = Driver.create!(name: 'Philo Miu', email: "philo@gmail.com", role:"driver",phone_number:0700123456, password: "philo1234")
+d5 = Driver.create!(name: 'Shah Jiko', email:"shah@gmail.com", role: "driver",phone_number:0700123456, password: "shah1234")
 
 puts "🌱🌱🌱 Drivers seeded 🌱🌱🌱 "
 

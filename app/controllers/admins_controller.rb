@@ -10,6 +10,11 @@ class AdminsController < ApplicationController
     admin.destroy
     head :no_content
   end
+  def update
+    admin = find_admin 
+    admin.update!(admin_params)
+    render json: admin
+  end
 
   def index
     admins = Admin.all 
@@ -18,7 +23,7 @@ class AdminsController < ApplicationController
 
   private
   def admin_params 
-    params.permit(:name, :email, :role, :password)
+    params.permit(:name, :email, :role, :password, :phone_number)
   end
 
   def find_admin
