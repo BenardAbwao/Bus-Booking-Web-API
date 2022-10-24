@@ -1,11 +1,10 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
-
   def create_a_session(id, role)
     session[:user_id] ||= id 
     session[:user_role] ||= role
   end
-
+  #uid and role are methods giving us details on session
   def me
     if (role== "driver")
       render json: Driver.find(uid)
@@ -24,6 +23,4 @@ class ApplicationController < ActionController::API
   def role
     session[:user_role]
   end
-
-  
 end
