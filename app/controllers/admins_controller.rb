@@ -16,7 +16,6 @@ class AdminsController < ApplicationController
     render json: admins, status: :ok
   end
 
-
   private
   def admin_params 
     params.permit(:name, :email, :role, :password)
@@ -27,7 +26,7 @@ class AdminsController < ApplicationController
   end
 
   def authorize
-    render json: {error: "Only admins can can access this functionality"}, status: :unauthorized unless session[:role]=== "admin"
+    render json: {error: "Only admins can can access this functionality"}, status: :unauthorized unless session[:user_role]== "admin"
   end
 
   def render_unprocessable_entity_response(exception)
