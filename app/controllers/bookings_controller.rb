@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
     before_action :authorize, only: [:create]
   def index
     bookings = Booking.all
-    binding.break
     render json: bookings, status: :ok
   end
 
