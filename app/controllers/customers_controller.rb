@@ -1,6 +1,11 @@
 class CustomersController < ApplicationController
+  def index
+    customers = Customer.all
+    render json: customers, status: :ok
+  end
+  
   def create
-    if(params[:role]=== customer)
+    if(params[:role]=== "customer")
       customer = Customer.create(customer_params)
       render json: customer, status: :ok
     else
