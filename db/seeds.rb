@@ -38,6 +38,13 @@ booking5 = Booking.create!(customer_id: cust5.id, bus_id: bus3.id)
 
 puts "🌱🌱🌱 done seeding bookings 🌱🌱🌱"
 
+puts "🌱🌱🌱 started seeding admins 🌱🌱🌱"
+Admin.create!(name: "superuser", email: "superuser@gmail.com", phone_number: 765432442, role: "admin", password: "superuser1234")
+
+puts "🌱🌱🌱 done seeding admins 🌱🌱🌱"
+
+
+
 
 
 
