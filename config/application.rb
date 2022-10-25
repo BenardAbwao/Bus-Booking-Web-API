@@ -14,19 +14,18 @@ module BusBookingWebApi
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        #origins "http://localhost:4000", "http://localhost:3000", "https://bus-booking-app-alpha.vercel.app"
-        origins "*"
+        origins "http://localhost:4000", "http://localhost:3000", "https://bus-booking-app-alpha.vercel.app"
         resource "*",
          headers: :any,
-        # credentials: true,
-          methods: [:get, :post, :patch, :delete]
+         credentials: true,
+         methods: [:get, :post, :patch, :delete]
       end
      end
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
     #config.action_dispatch.cookies_same_site_protection = :strict
     config.session_store :cookie_store, key: '_interslice_session'
-  # :same_site => :none, :secure => :true
+   :same_site => :none, :secure => :true
    config.middleware.use config.session_store, config.session_options
    config.middleware.use Rack::MethodOverride
    config.middleware.use ActionDispatch::Flash
