@@ -44,7 +44,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
   end
 
   def find_bus
-    Bus.find(params[:id])
+    Bus.find(params[:id]), status: :ok
   end
 end
 
