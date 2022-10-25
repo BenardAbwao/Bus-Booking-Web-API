@@ -21,7 +21,7 @@ puts "🌱🌱🌱 seeding customers 🌱🌱🌱"
 
 cust1 = Customer.create!(name: "Jane", email:"jane@gmail.com", phone_number: 723456456, role: "customer", password:"jane1234")
 cust2 = Customer.create!(name: "Janet", email:"janet@gmail.com", phone_number: 722888645, role: "customer", password:"janet1234")
-cust3 = Customer.create!(name: "Gilad", email:" gilad@gmail.com", phone_number: 720786637, role: "customer", password:"gilad1234")
+cust3 = Customer.create!(name: "Gilad", email:"gilad@gmail.com", phone_number: 720786637, role: "customer", password:"gilad1234")
 cust4 = Customer.create!(name: "Matheus", email:"matheus@gmail.com", phone_number: 712738393, role: "customer", password:"matheus1234")
 cust5 = Customer.create!(name: "Kingsley", email:"kingsley@gmail.com", phone_number: 787456388, role: "customer", password:"kingsley1234")
 

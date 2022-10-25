@@ -44,7 +44,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
   end
 
   def find_bus
-    render json: Bus.find(params[:id]), status: :ok
+    Bus.find(params[:id]), status: :ok
   end
 end
 
