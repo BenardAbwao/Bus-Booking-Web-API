@@ -18,7 +18,7 @@ class DriversController < ApplicationController
     private
 
     def driver_params
-      params.permit(:name,:email, :role, :password)
+      params.permit(:name,:email, :role, :password, :phone_number)
     end
 
     def render_not_found_response

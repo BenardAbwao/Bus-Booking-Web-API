@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_112607) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_28_100554) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -63,6 +63,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_112607) do
     t.string "role"
     t.string "password_digest"
     t.integer "phone_number"
+  end
+
+  create_table "seats", force: :cascade do |t|
+    t.integer "bus_id"
+    t.boolean "is_booked"
+    t.integer "seat_no"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
