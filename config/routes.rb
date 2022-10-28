@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :seats
   resources :admins, except: [:show, :patch]
   resources :drivers, only: [:index, :show, :create]
   resources :buses
