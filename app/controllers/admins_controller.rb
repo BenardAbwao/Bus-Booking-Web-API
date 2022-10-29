@@ -31,7 +31,7 @@ class AdminsController < ApplicationController
   end
 
   def authorize
-    render json: {error: "Only logged in admins can can access this functionality"}, status: :unauthorized unless session[:user_role]== "admin"
+    render json: {error: "Only logged in admins can can access this functionality"}, status: :unauthorized unless session[:user_role]=="admin"
   end
 
   def render_unprocessable_entity_response(exception)

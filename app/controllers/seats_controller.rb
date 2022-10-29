@@ -1,5 +1,5 @@
 class SeatsController < ApplicationController
-  before_action :authorize_potential_customer, only: [:update]
+  #before_action :authorize_potential_customer, only: [:update]
   def index
     seats = Seat.all 
     render json: seats, status: :ok
@@ -7,6 +7,11 @@ class SeatsController < ApplicationController
 
   def show
     seat = find_seat 
+    render json: seat, status: :ok
+  end
+
+  def create
+    seat = Seat.create!(seat_params)
     render json: seat, status: :ok
   end
 
@@ -26,7 +31,7 @@ class SeatsController < ApplicationController
   end
 
   def authorize_potential_customer
-    render json: {error: "You must login as a customer to book"}, status: :unauthorized unless session[:user_role]=== "customer"
+    render json: {error: "You must login as a customer to book"}, status: :unauthorized unless session[:user_role]==="customer" || session[:user_role]=== "admin"
   end
 
 end

@@ -13,6 +13,10 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
   def create
     bus = Bus.create!(bus_params)
+    seats = params[:no_of_seats].to_i
+    seats.times do |index|
+      Seat.create!(bus_id: bus.id, is_booked: false,seat_no: index+1)
+    end
     render json: bus, status: :created 
   end
 
