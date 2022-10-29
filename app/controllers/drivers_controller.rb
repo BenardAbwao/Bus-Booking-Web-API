@@ -15,10 +15,16 @@ class DriversController < ApplicationController
         render json: driver, status: :ok
     end
 
+    def destroy
+      driver = Driver.find(params[:id])
+      driver.destroy 
+      head :no_content
+    end
+
     private
 
     def driver_params
-      params.permit(:name,:email, :role, :password)
+      params.permit(:name,:email, :role, :password, :phone_number)
     end
 
     def render_not_found_response

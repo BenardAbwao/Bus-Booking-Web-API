@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bus_id: 1
+  is_booked: false
+  seat_no: 1
+
+two:
+  bus_id: 1
+  is_booked: false
+  seat_no: 1
