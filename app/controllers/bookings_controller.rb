@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
     before_action :authorize, only: [:create]
   def index
-    bookings = Booking.all
+    bookings = Booking.page(page).per(per_page)
     render json: bookings, status: :ok
   end
 
