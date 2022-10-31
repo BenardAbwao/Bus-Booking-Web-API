@@ -48,7 +48,7 @@ class ApplicationController < ActionController::API
   end
 
   def per_page
-    @per_page ||= params[:per_page] || 2
+    @per_page ||= params[:per_page] || 30
   end
 
   def set_pagination_headers(v_name)
