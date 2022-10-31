@@ -12,6 +12,12 @@ class CustomersController < ApplicationController
       return null
     end
   end
+  
+  def update
+    customer = find_customer
+    customer.update(customer_params)
+    render json: customer, status: :ok
+  end
 
   def show
     customer = find_customer
