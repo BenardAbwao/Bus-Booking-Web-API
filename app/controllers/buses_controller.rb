@@ -1,11 +1,13 @@
 class BusesController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-  MAX_PAGINATION_LIMIT = 2
-  OFFSET_LIMIT = 0
+
+# before_action :set_bus, only: [:show, :update, :destroy]
+
+# after_action only: [:index] set_pagination_headers :buses
 
   def index
-    buses = Bus.limit(limit).offset(offset)
+    buses = Bus.page(page).per(per_page)
     render json: buses, status: :ok
   end
 
@@ -36,20 +38,6 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
   end
 
   private
-
-  def limit
-    [
-      params.fetch(:limit, MAX_PAGINATION_LIMIT).to_i,
-      MAX_PAGINATION_LIMIT
-    ].min
-  end
-
-  def offset
-    [
-      params.fetch(:offset, OFFSET_LIMIT).to_i,
-      OFFSET_LIMIT
-    ].max
-  end
 
   def render_not_found_response
     render json: {error: "Bus not found"}, status: :not_found
