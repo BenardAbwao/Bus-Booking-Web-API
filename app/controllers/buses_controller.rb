@@ -1,8 +1,13 @@
 class BusesController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+
+# before_action :set_bus, only: [:show, :update, :destroy]
+
+# after_action only: [:index] set_pagination_headers :buses
+
   def index
-    buses = Bus.all 
+    buses = Bus.page(page).per(per_page)
     render json: buses, status: :ok
   end
 

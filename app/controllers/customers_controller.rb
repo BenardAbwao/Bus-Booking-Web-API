@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   def index
-    customers = Customer.all
+    customers = Customer.page(page).per(per_page)
     render json: customers, status: :ok
   end
   

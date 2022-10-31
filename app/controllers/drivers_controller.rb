@@ -1,7 +1,7 @@
 class DriversController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     def index
-        drivers = Driver.all
+        drivers = Driver.page(page).per(per_page)
         render json: drivers 
     end
 
