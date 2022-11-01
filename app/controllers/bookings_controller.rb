@@ -11,9 +11,10 @@ class BookingsController < ApplicationController
   end
 
   def create
-    seat = Seat.find(params[:seat_id])
-    bus_id = seat.bus.id
-    booking = Booking.create!(bus_id: bus_id, 
+    seatId = params[:seat_id].to_i
+    seat = Seat.find(seatId)
+    busId = seat.bus.id
+    booking = Booking.create!(bus_id: busId, 
                               customer_id: params[:customer_id],
                               seat_no: params[:seat_no]
                               )
