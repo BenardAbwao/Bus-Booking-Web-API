@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    booking = Booking.create!(bus_params)
+    booking = Booking.create!(booking_params)
     render json: booking, status: :created
   end
 
