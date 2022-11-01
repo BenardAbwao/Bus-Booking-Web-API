@@ -11,13 +11,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    seatId = params[:seat_id].to_i
-    seat = Seat.find(seatId)
-    busId = seat.bus.id
-    booking = Booking.create!(bus_id: busId, 
-                              customer_id: params[:customer_id],
-                              seat_no: params[:seat_no]
-                              )
+    booking = Booking.create!(bus_params)
     render json: booking, status: :created
   end
 
