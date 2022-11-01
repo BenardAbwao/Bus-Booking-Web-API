@@ -2,7 +2,7 @@ class SeatsController < ApplicationController
   #before_action :authorize_potential_customer, only: [:update]
   def index
     seats = Seat.page(page).per(per_page)
-    render json: seats, status: :ok
+    render json: seats.order(created_at: :ASC), status: :ok
   end
 
   def show
