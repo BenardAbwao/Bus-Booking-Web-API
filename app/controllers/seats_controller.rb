@@ -17,6 +17,9 @@ class SeatsController < ApplicationController
 
   def update
     seat = find_seat 
+    #bus = seat.bus.id...
+    #customer_id..using the customer in session
+    #seat_no
     seat.update(seat_params)
     render json: seat, status: :ok
   end
