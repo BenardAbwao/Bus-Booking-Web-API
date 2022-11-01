@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.permit(:bus_id, :customer_id)
+    params.permit(:bus_id, :customer_id, :seat_no)
   end
 
   def authorize
