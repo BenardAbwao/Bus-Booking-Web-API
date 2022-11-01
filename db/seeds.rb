@@ -7,11 +7,11 @@ d5 = Driver.create!(name: 'Shah Jiko', email:"shah@gmail.com", role: "driver",ph
 puts"🌱 Done Seeding Drivers 🌱 "
 
 puts "🌱 Seeding Buses 🌱"
-bus1 = Bus.create!(plate_number: "KDJ 444H",driver_id: d1.id, no_of_seats: 42, cost_per_seat: 350, from: "Nairobi", to: "Nakuru", travel_date:Date.new(2022,10,18), travel_time:"11:30", available: true)
-bus2 = Bus.create!(plate_number: "KDG 500Y",driver_id: d2.id, no_of_seats: 62, cost_per_seat: 1350, from: "Nairobi", to: "Mombasa", travel_date:Date.new(2022,10,19), travel_time:"8:30", available: true)
-bus3 = Bus.create!(plate_number: "KDB 678K",driver_id: d3.id, no_of_seats: 33, cost_per_seat: 650, from: "Kisumu", to: "Nakuru",travel_date:Date.new(2022,10,23), travel_time:"9:30", available: true)
-bus4 = Bus.create!(plate_number: "KDE 546R",driver_id: d4.id, no_of_seats: 51, cost_per_seat: 2350, from: "Mombasa", to: "Isiolo", travel_date:Date.new(2022,10,10), travel_time:"13:30", available: true)
-bus5 = Bus.create!(plate_number: "KDA 765T",driver_id: d5.id, no_of_seats: 42, cost_per_seat: 300, from: "Nairobi", to: "Machakos", travel_date:Date.new(2022,10,8), travel_time:"15:30", available: true)
+bus1 = Bus.create!(plate_number: "KDJ 444H",driver_id: d1.id, no_of_seats: 48, cost_per_seat: 350, from: "Nairobi", to: "Nakuru", travel_date:Date.new(2022,10,18), travel_time:"11:30", available: true)
+bus2 = Bus.create!(plate_number: "KDG 500Y",driver_id: d2.id, no_of_seats: 48, cost_per_seat: 1350, from: "Nairobi", to: "Mombasa", travel_date:Date.new(2022,10,19), travel_time:"8:30", available: true)
+bus3 = Bus.create!(plate_number: "KDB 678K",driver_id: d3.id, no_of_seats: 48, cost_per_seat: 650, from: "Kisumu", to: "Nakuru",travel_date:Date.new(2022,10,23), travel_time:"9:30", available: true)
+bus4 = Bus.create!(plate_number: "KDE 546R",driver_id: d4.id, no_of_seats: 48, cost_per_seat: 2350, from: "Mombasa", to: "Isiolo", travel_date:Date.new(2022,10,10), travel_time:"13:30", available: true)
+bus5 = Bus.create!(plate_number: "KDA 765T",driver_id: d5.id, no_of_seats: 48, cost_per_seat: 300, from: "Nairobi", to: "Machakos", travel_date:Date.new(2022,10,8), travel_time:"15:30", available: true)
 puts "🌱 Done Seeding Buses 🌱"
 
 puts "🌱 Seeding Customers 🌱"
